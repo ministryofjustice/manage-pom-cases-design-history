@@ -56,7 +56,7 @@
     "sass": "^1.45.0"
   },
   "devDependencies": {
-    "standard": "^16.0.3",
+    "standard": "^17.1.0",
     "webshot-node": "^0.18.2"
   },
   "standard": {
