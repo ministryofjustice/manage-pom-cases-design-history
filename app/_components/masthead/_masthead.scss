@@ -1,9 +1,11 @@
+@use "govuk/index" as govuk;
+
 .app-masthead {
-  @include govuk-responsive-padding(6, "top");
-  @include govuk-responsive-padding(6, "bottom");
+  @include govuk.govuk-responsive-padding(6, "top");
+  @include govuk.govuk-responsive-padding(6, "bottom");
   color: govuk-colour("white");
   background-color: govuk-colour("blue");
-  margin-top: #{govuk-spacing(2) * -1};
+  margin-top: #{govuk.govuk-spacing(2) * -1};
 }
 
 .app-masthead * {
@@ -11,19 +13,19 @@
 }
 
 .app-masthead__title {
-  @include govuk-font($size: 36, $weight: bold);
+  @include govuk.govuk-font($size: 36, $weight: bold);
   margin-top: 0;
 
   .app-masthead--large & {
-    @include govuk-font($size: 48, $weight: "bold");
+    @include govuk.govuk-font($size: 48, $weight: "bold");
   }
 }
 
 .app-masthead__description * {
-  @include govuk-font($size: 19);
+  @include govuk.govuk-font($size: 19);
 
   .app-masthead--large * & {
-    @include govuk-font($size: 24);
+    @include govuk.govuk-font($size: 24);
   }
 }
 

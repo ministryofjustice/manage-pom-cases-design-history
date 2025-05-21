@@ -1,8 +1,9 @@
 $govuk-global-styles: true;
+// $path: "/assets/images/";
 
-@import "govuk/all.scss";
-@import "_components/all.scss";
-@import "vendor/prism.scss";
+@use "govuk/index" as govuk;
+@use "_components/all.scss" as *;
+@use "vendor/prism.scss" as *;
 
 @media print {
   // Force a white background when printing a page

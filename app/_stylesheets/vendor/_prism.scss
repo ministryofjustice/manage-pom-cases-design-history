@@ -1,4 +1,6 @@
-$token-comment: rgba(govuk-colour("dark-grey"), 0.75);
+@use "govuk/index" as govuk;
+
+$token-comment: rgba(govuk.govuk-colour("dark-grey"), 0.75);
 $token-operator: govuk-colour("dark-grey");
 $token-function: #900;
 $token-keyword: #09c;

@@ -56,7 +56,9 @@
     "sass": "^1.89.0"
   },
   "devDependencies": {
+    "@web/rollup-plugin-copy": "^0.5.1",
     "playwright": "^1.52.0",
+    "rollup-plugin-copy": "^3.5.0",
     "standard": "^17.1.2"
   },
   "standard": {

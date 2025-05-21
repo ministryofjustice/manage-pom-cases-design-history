@@ -1,6 +1,8 @@
+@use "govuk/index" as govuk;
+
 .app-email {
-  @include govuk-font($size: false);
-  border: $govuk-border-width solid $govuk-border-colour;
+  @include govuk.govuk-font($size: false);
+  border: govuk.$govuk-border-width solid govuk.$govuk-border-colour;
   padding: govuk-spacing(4);
   margin-bottom: govuk-spacing(8);
   max-width: 40rem;
@@ -48,5 +50,5 @@
   padding-bottom: govuk-spacing(4);
   margin-top: 0;
   margin-bottom: govuk-spacing(4);
-  border-bottom: 1px solid $govuk-border-colour;
+  border-bottom: 1px solid govuk.$govuk-border-colour;
 }

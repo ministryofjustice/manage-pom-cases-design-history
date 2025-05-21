@@ -1,5 +1,9 @@
 const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
+// const copy = require("@web/rollup-plugin-copy");
+// const copy = require('@web/rollup-plugin-copy').default;
+// const copy = require("@web/rollup-plugin-copy").default;
+const copy = require("rollup-plugin-copy");
 
 module.exports = [
   {
@@ -8,7 +12,18 @@ module.exports = [
       file: "public/javascripts/application.js",
       format: "iife",
     },
-    plugins: [nodeResolve(), commonjs()],
+    plugins: [
+      nodeResolve(),
+      commonjs(),
+      copy({
+        targets: [
+          {
+            src: "node_modules/govuk-frontend/dist/govuk/assets/**/*",
+            dest: "public/assets",
+          },
+        ],
+      }),
+    ],
   },
   {
     input: "node_modules/govuk-frontend/dist/govuk/all",

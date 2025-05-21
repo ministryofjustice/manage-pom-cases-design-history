@@ -1,3 +1,5 @@
+@use "govuk/index" as govuk;
+
 .app-gallery {
   list-style: none;
   padding: 0;
@@ -10,7 +12,7 @@
   grid-gap: govuk-spacing(6);
 
   .app-figure {
-    @include govuk-responsive-margin(2, "bottom");
+    @include govuk.govuk-responsive-margin(2, "bottom");
 
     a {
       display: block;
