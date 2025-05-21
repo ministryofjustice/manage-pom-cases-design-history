@@ -27,6 +27,7 @@ const paths = [
 // Dependencies
 const { DateTime } = require('luxon')
 const webshot = require('webshot-node')
+const { chromium } = require('playwright');
 const fs = require('fs')
 
 // Arguments
@@ -94,14 +95,16 @@ function takeScreenshots () {
   }
 
   paths.forEach(function (item, index) {
-    webshot(
-      domain + item.path,
-      item.file,
-      webshotOptions,
-      function () {
-        console.error(`${domain + item.path} \n >> ${item.file}`)
-      }
-    )
+    try {
+      const browser = await chromium.launch();
+      const page = await browser.newPage();
+      await page.goto(domain + item.path, { waitUntil: 'networkidle' });
+      await page.screenshot({ path: item.file, fullPage: true });
+      await browser.close();
+      console.error(`${domain + item.path} \n >> ${item.file}`);
+    } catch (err) {
+      console.error(`Failed to screenshot ${domain + item.path}:`, err);
+    }
   })
 }
 

@@ -56,8 +56,8 @@
     "sass": "^1.89.0"
   },
   "devDependencies": {
-    "standard": "^17.1.2",
-    "webshot-node": "^0.18.2"
+    "playwright": "^1.52.0",
+    "standard": "^17.1.2"
   },
   "standard": {
     "ignore": [
