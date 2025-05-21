@@ -1,10 +1,10 @@
 @use "govuk/index" as govuk;
 
 $button-shadow-size: govuk.$govuk-border-width-form-element;
-$app-button-inverted-background-colour: govuk-colour("white");
-$app-button-inverted-foreground-colour: govuk-colour("blue");
-$app-button-inverted-shadow-colour: govuk-shade($app-button-inverted-foreground-colour, 30%);
-$app-button-inverted-hover-background-colour: govuk-tint($app-button-inverted-foreground-colour, 90%);
+$app-button-inverted-background-colour: govuk.govuk-colour("white");
+$app-button-inverted-foreground-colour: govuk.govuk-colour("blue");
+$app-button-inverted-shadow-colour: govuk.govuk-shade($app-button-inverted-foreground-colour, 30%);
+$app-button-inverted-hover-background-colour: govuk.govuk-tint($app-button-inverted-foreground-colour, 90%);
 
 .app-button--inverted,
 .app-button--inverted:link,

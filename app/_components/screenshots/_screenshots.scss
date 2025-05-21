@@ -2,7 +2,7 @@
 
 .app-screenshots__contents,
 .app-screenshots__screenshot {
-  margin-bottom: govuk-spacing(9);
+  margin-bottom: govuk.govuk-spacing(9);
 }
 
 @include govuk.govuk-media-query($media-type: print) {

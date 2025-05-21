@@ -7,8 +7,8 @@
 
 .app-document-list__item {
   border-bottom: 1px solid govuk.$govuk-border-colour;
-  margin-bottom: govuk-spacing(4);
-  padding-bottom: govuk-spacing(4);
+  margin-bottom: govuk.govuk-spacing(4);
+  padding-bottom: govuk.govuk-spacing(4);
 
   &:last-child {
     border-bottom: 0;
@@ -19,7 +19,7 @@
 
 .app-document-list__item-title {
   @include govuk.govuk-font($size: 24, $weight: "bold");
-  margin: 0 0 govuk-spacing(1);
+  margin: 0 0 govuk.govuk-spacing(1);
 }
 
 .app-document-list__item-metadata {
@@ -29,7 +29,7 @@
 
 .app-document-list__item-description {
   @include govuk.govuk-font($size: 19);
-  margin: govuk-spacing(1) 0;
+  margin: govuk.govuk-spacing(1) 0;
 }
 
 .app-document-list__attribute {
@@ -37,5 +37,5 @@
   color: govuk.$govuk-secondary-text-colour;
   display: inline-block;
   margin: 0;
-  padding-right: govuk-spacing(4);
+  padding-right: govuk.govuk-spacing(4);
 }
