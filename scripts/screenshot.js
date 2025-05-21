@@ -26,7 +26,6 @@ const paths = [
 
 // Dependencies
 const { DateTime } = require('luxon')
-const webshot = require('webshot-node')
 const { chromium } = require('playwright');
 const fs = require('fs')
 
@@ -45,11 +44,11 @@ const imageDirectory = `app/images/${directoryName}`
 const postDirectory = `app/posts/${directoryName}`.replace('/' + deepestDirectory, '')
 
 // Run
-function start () {
+async function start () {
   makeDirectories()
   decoratePaths()
   generatePage()
-  takeScreenshots()
+  await takeScreenshots()
 }
 
 function warnIfNoArguments (title) {
@@ -78,34 +77,20 @@ function decoratePaths () {
   })
 }
 
-function takeScreenshots () {
-  // https://github.com/brenden/node-webshot
-  const webshotOptions = {
-    phantomConfig: {
-      'ignore-ssl-errors': 'true'
-    },
-    windowSize: {
-      width: 1200,
-      height: 800
-    },
-    shotSize: {
-      width: 'window',
-      height: 'all'
-    }
-  }
-
-  paths.forEach(function (item, index) {
+async function takeScreenshots () {
+  for (const item of paths) {
+    const browser = await chromium.launch();
+    const page = await browser.newPage();
+    await page.setViewportSize({ width: 1200, height: 800 });
     try {
-      const browser = await chromium.launch();
-      const page = await browser.newPage();
       await page.goto(domain + item.path, { waitUntil: 'networkidle' });
       await page.screenshot({ path: item.file, fullPage: true });
-      await browser.close();
       console.error(`${domain + item.path} \n >> ${item.file}`);
     } catch (err) {
       console.error(`Failed to screenshot ${domain + item.path}:`, err);
     }
-  })
+    await browser.close();
+  }
 }
 
 function generatePage () {
