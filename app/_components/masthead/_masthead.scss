@@ -3,8 +3,6 @@
 .app-masthead {
   padding-top: govuk.govuk-spacing(6);
   padding-bottom: govuk.govuk-spacing(6);
-  // @include govuk.govuk-responsive-padding(6, "top");
-  // @include govuk.govuk-responsive-padding(6, "bottom");
   color: govuk.govuk-colour("white");
   background-color: govuk.govuk-colour("blue");
   margin-top: #{govuk.govuk-spacing(2) * -1};

@@ -1,8 +1,5 @@
 const { nodeResolve } = require("@rollup/plugin-node-resolve");
 const commonjs = require("@rollup/plugin-commonjs");
-// const copy = require("@web/rollup-plugin-copy");
-// const copy = require('@web/rollup-plugin-copy').default;
-// const copy = require("@web/rollup-plugin-copy").default;
 const copy = require("rollup-plugin-copy");
 
 module.exports = [
