@@ -3,9 +3,10 @@ layout: collection
 title: "Manage POM cases (MPC) design history"
 description: "A record of how this service has developed over time."
 pagination:
-  data: collections.all
+  data: collections.safeAll
   reverse: true
   size: 50
+  alias: post
 posts:
   title: Posts
 eleventyComputed:

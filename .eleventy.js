@@ -34,6 +34,10 @@ module.exports = function (eleventyConfig) {
   // Transforms
 
   // Collections
+  eleventyConfig.addCollection("safeAll", function (collectionApi) {
+    const all = collectionApi.getAll();
+    return Array.isArray(all) ? all : [];
+  })
 
   // Passthrough
   eleventyConfig.addPassthroughCopy('./app/documents')
